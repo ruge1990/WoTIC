@@ -63,4 +63,4 @@ with open(filename, 'w') as file:
         file.write('\n  await aiocoap.Context.create_server_context(root)\n')
         file.write('  await asyncio.get_running_loop().create_future()\n')
         file.write('\nif __name__ == "__main__":\n')
-        file.write('  asyncio.run(main())\n')     
+        file.write('  asyncio.run(main())\n') 
