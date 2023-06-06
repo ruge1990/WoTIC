@@ -1,0 +1,56 @@
+{
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        {
+            "wotdl": "http://vsr.informatik.tu-chemnitz.de/projects/2019/growth/wotdl#",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        }
+    ],
+    "id": "urn:dev:ops:vsr-WoT/Grove-Temperature-Humidity-001",
+    "title": "grove_temperature_humidity_sensor",
+    "@type": ["wotdl:Sensor"],
+    "securityDefinitions": {"basic_sc": {
+        "scheme": "basic",
+        "in": "header"
+    }},
+    "security": ["basic_sc"],
+    "wotdl:Parameters": {
+        "AmbientTemperature": {
+            "id": "urn:dev:ops:vsr-WoT/Parameters/AmbientTemperature",
+            "title": "AmbientTemperature",
+            "@type": "xsd:decimal"
+        },
+        "AmbientHumidity": {
+            "id": "urn:dev:ops:vsr-WoT/Parameters/AmbientHumidity",
+            "title": "AmbientHumidity",
+            "@type": "xsd:decimal"
+        }
+    },
+    "properties": {
+        "temperatureMeasure": {
+            "@type": "wotdl:Measurement",
+            "wotdl:measures":{
+                "id": "urn:dev:ops:vsr-WoT/Parameters/AmbientTemperature"
+            },
+            "title": "get_temperature_grove",
+            "forms": [{
+                "href": "http://192.168.178.22/temperature/1"
+            },{
+                "href": "coap://192.168.178.22/temperature/1"
+                
+            }]
+        },
+        "humidityMeasure": {
+            "@type": "wotdl:Measurement",
+            "wotdl:measures": {
+                "id": "urn:dev:ops:vsr-WoT/Parameters/AmbientHumidity"
+            },
+            "title": "get_humidity_grove",
+            "forms": [{
+                "href": "http://192.168.178.22/humidity/1"
+            },{
+                "href": "coap://192.168.178.22/humidity/1"
+            }]
+        }
+    }
+}
