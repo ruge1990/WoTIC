@@ -1,5 +1,5 @@
 .gitignore
-flask_out/
+flask_out
 dc_motor_fan.py
 grove_air_quality_sensor.py
 grove_temperature_humidity_sensor.py
@@ -8,5 +8,5 @@ Grove-Air-Quality-TD instance.json
 Grove-Temperature-Humidity-TD instance.json
 test.py
 client.py
-__pycache__/
-instances/
+__pycache__
+instances
