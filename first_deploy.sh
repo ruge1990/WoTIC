@@ -22,5 +22,7 @@ echo initialize raspberry pi
 
 ( set -x ; scp -r server.py flask_out/ pi@${PI_IP}:/home/pi/api)
 ( set -x ; ssh -t pi@${PI_IP} "cd /home/pi/api/flask_out;
-pip3 install -r requirements.txt;
-python3 -m wot_api & python3 server.py" )
+python3 -m wot_api & python3 ../server.py" )
+# ( set -x ; ssh -t pi@${PI_IP} "cd /home/pi/api/flask_out;
+# pip3 install -r requirements.txt;
+# python3 -m wot_api & python3 ../server.py" )
